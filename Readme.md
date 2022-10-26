@@ -4,39 +4,24 @@
 The neweast version of PolyAcaller has been deposited in https://github.com/ZhaiLab-SUSTech/FLEPSeq, please use th neweast one.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Predicate potential poly(A) regions from Nanopore fast5 file which has been basecalled by guppy with flipflop mode.
-
-Maintained by Jinbu Jia, Weipeng Mo, Zhijian Liu.
+Predicate potential poly(A) regions from Nanopore fast5 file which has been basecalled by guppy with flipflop mode. 从Nanopore fast5文件中谓词潜在的poly(A)区域，该文件被guppy用触发模式称为碱基。
 
 ## 0. Install
 
 ```
 git clone https://github.com/zhailab/polyAcaller.git
 cd polyAcaller
-python setup.py install
+python3 setup.py install
 ````
 
 ## 1. For extract the best polyA region:
 
 ```
-cd example #you need run not in git install package
-```
-
-```
+cd example 
 polyAcaller test_sample1.fast5 test_run.out
 ```
+
+<img src="./Readme.assets/image-20221026001447250.png" alt="image-20221026001447250" style="zoom:50%;" />
 
 ## 2. For extract all potential polyA region:
 
@@ -50,9 +35,7 @@ polyAcaller test_sample1.fast5  test_run.out 0 #default 1
 polyAcaller test_sample2.fast5 test_run_.out 0 test_sample2.search_region.txt
 ```
 
-It's better to limit the polyA search region in a specific region. 
-Such as the region between adapter and genome mapping region. It's
-better to set some padding region, such as:
+It's better to limit the polyA search region in a specific region. Such as the region between adapter and genome mapping region. It's better to set some padding region, such as:
 ```
 
                     genome mapping region (|)      unmapping region (-)  3' adapter (*)
@@ -182,5 +165,4 @@ flop              index 0    1    2    3    4 ...
                     T
 flip: the probability of one move belongs to A, C, G, T
 flop: the probability of one move belongs to continous A, continous C, continous G, continous T
-
 
